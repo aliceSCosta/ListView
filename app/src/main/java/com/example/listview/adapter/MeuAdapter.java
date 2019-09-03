@@ -42,8 +42,17 @@ public class MeuAdapter extends ArrayAdapter<Tarefa> {
         TextView nome = listItem.findViewById(R.id.text_view_tarefa_nome);
         nome.setText(tarefaAtual.getNome());
 
+        if (tarefaAtual.getStatus()){
+
         TextView status = listItem.findViewById(R.id.text_view_tarefa_status);
-        status.setText(tarefaAtual.getStatus().toString());
+        status.setText("");
+
+        }else {
+
+            TextView status = listItem.findViewById(R.id.text_view_tarefa_status);
+            status.setText("Concluir");
+
+        }
 
         return listItem;
     }
